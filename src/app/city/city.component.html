@@ -1,0 +1,26 @@
+<div class="container">
+  
+  <div class="row">
+    <div *ngFor="let city of cities" class="col-md-6" >
+      <div style="margin-top: 50px;"  class="card mb-4 shadow-sm">
+        <h2 style="font-weight: normal;">{{city.name}}</h2>
+        <img id="city" src="{{city.photoUrl}}" alt="" >
+        <div class="card-body">
+          <p class="card-text">{{city.description}}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <!-- 
+                  City componentinde elimizde city'nin id,description,name,photoUrl i bulunmaktaydı. Dolayısıyla aşağıdaki 
+                  view butonuna routerLink vererek işlem yapılan şehrin id sini cityDetail' a gönderebildik.
+
+               -->
+              <button type="button" routerLink="/cityDetail/{{city.id}}" class="btn btn-sm btn-outline-secondary">View</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </div>
+            <small class="text-muted">9 mins</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

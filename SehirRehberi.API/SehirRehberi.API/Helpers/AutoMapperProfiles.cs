@@ -18,6 +18,11 @@ namespace SehirRehberi.API.Helpers
 
                     opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url);
                 });
+
+            CreateMap<City, CityForDetailsDto>();
+            CreateMap<Photo, PhotoForCreationDto>();
+            CreateMap<PhotoForCreationDto, Photo>();
         }
+
     }
 }
